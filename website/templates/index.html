@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +80,7 @@
 <body style="background-color:rgb(70, 43, 32)">
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container">
-      <a href="#" class="navbar-brand"><img src="logo.png" alt="#" height="55"></a>
+      <a href="#" class="navbar-brand"><img src="{% static 'images/logo.jpg' %}" alt="#" height="55"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navmenu"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto" id="navmenu">
@@ -112,7 +113,7 @@
           <button class="btn mb-4" id="orderbtn">ORDER ONLINE</button>
         </div>
         <div class="col-md-6">
-          <img class="img-fluid mx-auto" src="back.png" alt="">
+          <img class="img-fluid mx-auto" src="{% static 'images/back.jpg' %}" alt="">
         </div>
       </div>
     </div>
@@ -127,7 +128,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="card h-100 bg-dark text-light">
-          <img class="card-img-top uniform-img" src="iced-coffee-latte.jpg">
+          <img class="card-img-top uniform-img" src="{% static 'images/iced-coffee-latte.jpg' %}">
           <div class="card-body">
             <h5 class="card-title product">ICED LATTE</h5>
             <p class="card-text">One shot Espresso, 300mL of Milk, Ice cubes.</p>
@@ -141,7 +142,7 @@
       </div>
       <div class="col-lg-4">
         <div class="card h-100 bg-dark text-light">
-          <img class="card-img-top uniform-img" src="iced-americano.jpg" alt="Card image cap">
+          <img class="card-img-top uniform-img" src="{% static 'images/iced-americano.jpg' %}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title product">ICED AMERICANO</h5>
             <p class="card-text">2 shots of Espresso, 200mL of water with Ice cubes.</p>
@@ -155,7 +156,7 @@
       </div>
       <div class="col-lg-4">
         <div class="card h-100 bg-dark text-light">
-          <img class="card-img-top uniform-img" src="iced-matcha-latte.jpg" alt="Card image cap">
+          <img class="card-img-top uniform-img" src="{% static 'images/iced-matcha-latte.jpg' %}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title product">ICED MATCHA LATTE</h5>
             <p class="card-text">200mL of Fresh Milk, Matcha syrup & Ice cubes.</p>
@@ -180,7 +181,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="card h-100 bg-dark text-light">
-          <img class="card-img-top uniform-img2" src="latte.jpg">
+          <img class="card-img-top uniform-img2" src="{% static 'images/latte.jpg' %}">
           <div class="card-body">
             <h5 class="card-title product">LATTE</h5>
             <p class="card-text">One shot Espresso, 300mL of Medium Foamed Milk.</p>
@@ -194,7 +195,7 @@
       </div>
       <div class="col-lg-4">
         <div class="card h-100 bg-dark text-light">
-          <img class="card-img-top uniform-img2" src="mocha.jpg" alt="Card image cap">
+          <img class="card-img-top uniform-img2" src="{% static 'images/mocha.jpg' %}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title product">MOCHA</h5>
             <p class="card-text">1 shot of Espresso, Chocolatte Syrup, Foamed Milk.</p>
@@ -208,7 +209,7 @@
       </div>
       <div class="col-lg-4">
         <div class="card h-100 bg-dark text-light">
-          <img class="card-img-top uniform-img2" src="espresso.jpg" alt="Card image cap">
+          <img class="card-img-top uniform-img2" src="{% static 'images/espresso.jpg' %}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title product">ESSPRESSO</h5>
             <p class="card-text">One shot of pure coffee.</p>
