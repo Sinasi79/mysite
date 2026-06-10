@@ -1983,6 +1983,10 @@ input, select, textarea {
 			.icon.featured:before {
 				font-size: 6em;
 			}
+		.myIcon {
+			font-size: 50px;
+
+		}
 
 /* Wrappers */
 
