@@ -3,6 +3,10 @@ from website.views import *
 
 urlpatterns = [
     path('', index_view),
-    path('about', about_view)
+    path('education', education_view),
+    path('skills', skills_view),
+    path('languages', languages_view),
+    path('projects', projects_view),
+    path('contact', contact_view),
     
 ]
