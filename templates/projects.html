@@ -9,13 +9,16 @@
 				
 			</header>
 			<div class="row">
+				{% for post in posts %}
 				<div class="col-12">
 					<article class="box style2">
 						<a href="#" class="image featured"><img src="{% static 'images/diabetes.jpg' %}" alt="" /></a>
-						<h3><a href="#">{{title}}</a></h3>
-						<p>{{info}}</p>
+						<h3><a href="#">{{post.title}}</a></h3>
+						<p>{{post.content}}</p>
+						<small>{{post.published_date}}</small>
 					</article>
 				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</article>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from website.models import Post
 
 def index_view(request) :
     context = {'name':'Sina','lastname':'Sabetimani'}
@@ -15,8 +16,9 @@ def languages_view(request) :
     return render(request,'languages.html')
 
 def projects_view(request) :
-    context2 = {'title':'AI THESIS IN TYPE 2 DIABETES DIAGNOSIS','info':'Prediction of Type 2 Diabetes Based on Anthropometric Indices Using Machine Learning Algorithms in Mashhad Persian Cohort Population.'}
-    return render(request,'projects.html',context2)
+    posts = Post.objects.all().filter(status=1)
+    context_project = {'posts':posts}
+    return render(request,'projects.html',context_project)
 
 def contact_view(request) :
     return render(request,'contact.html')
