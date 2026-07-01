@@ -11,6 +11,9 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now = True)
     published_date = models.DateTimeField(null = True)
 
+    def __str__(self):
+        return self.title
+
 class Contact(models.Model):
     name = models.CharField(max_length = 255)
     email = models.EmailField()
