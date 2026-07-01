@@ -23,5 +23,9 @@ def projects_view(request) :
 def contact_view(request) :
     return render(request,'contact.html')
 
+def project_view(request) :
+    posts = Post.objects.all().filter(status=1)
+    context_project2 = {'posts':posts}
+    return render(request,'project.html',context_project2)
 
 

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<article id="portfolio" class="wrapper style3">
+    <div class="container">
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-3">
+                <article class="box style2">
+                    <a href="#" class="image featured"><img src="{% static 'images/diabetes.jpg' %}" alt="" /></a>
+                    <h3>{{post.title}}</h3>
+                    <small>{{post.published_date}}</small>
+                </article>
+            </div>
+            <div class="col-9">
+                <article class="box style2">
+                    <h2>English Abstract</h2>
+                    <p style="text-align: justify; direction: ltr; color: black;">{{ post.more_info|linebreaksbr }}</p>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
