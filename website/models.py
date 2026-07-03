@@ -11,6 +11,7 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now = True)
     published_date = models.DateTimeField(null = True)
     more_info = models.TextField()
+    more_info_header = models.CharField(max_length = 255)
 
     class Meta :
         ordering = ('created_date',)
