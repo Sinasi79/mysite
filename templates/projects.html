@@ -12,7 +12,7 @@
 				{% for post in posts %}
 				<div class="col-6">
 					<article class="box style2">
-						<a href="#" class="image featured"><img src="{% static 'images/diabetes.jpg' %}" alt="" /></a>
+						<a href="#" class="image featured"><img src={{post.image.url}} alt="" /></a>
 						<h3><a href="/projects/post-{{post.id}}">{{post.title}}</a></h3>
 						<p>{{post.content}}</p>
 						<small>{{post.published_date}}</small>
