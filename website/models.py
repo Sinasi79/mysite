@@ -13,6 +13,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(null = True)
     more_info = models.TextField()
     more_info_header = models.CharField(max_length = 255)
+    counted_views = models.IntegerField(default = 0)
 
     class Meta :
         ordering = ('created_date',)
