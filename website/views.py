@@ -29,7 +29,15 @@ def project_view(request,pid) :
     post = Post.objects.get(id=pid,status=1)
     post.counted_views += 1
     post.save()
-    context_project2 = {'post':post}
+    posts = list(Post.objects.filter(status=1, published_date__lte=timezone.now()))
+    current_index = posts.index(post)
+    previous_post = None
+    next_post = None
+    if current_index > 0:
+        previous_post = posts[current_index - 1]
+    if current_index < len(posts) - 1:
+        next_post = posts[current_index + 1]
+    context_project2 = {'post':post,'previous_post': previous_post,'next_post': next_post}
     return render(request,'project.html',context_project2)
 
 
