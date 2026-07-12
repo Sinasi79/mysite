@@ -14,7 +14,7 @@
 					<article class="box style2" style="height: 650px;">
 						<p class="image featured"><img src={{post.image.url}} alt="" style="height: 400px;"/></p>
 						<h3><a href="/projects/post-{{post.id}}">{{post.title}}</a></h3>
-						<p>{{post.content}}</p>
+						<p>{{post.content|truncatewords:15}}</p>
 						<small>>{{post.published_date|date:"d M Y"}}</small>
 						<small>/ published by : {{post.author}}</small>
 						<small>/ views : {{post.counted_views}}</small>
