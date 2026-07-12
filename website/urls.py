@@ -6,8 +6,6 @@ urlpatterns = [
     path('education', education_view),
     path('skills', skills_view),
     path('languages', languages_view),
-    path('projects', projects_view),
     path('contact', contact_view),
-    path('projects/post-<int:pid>',project_view, name = 'project'),
     
 ]
