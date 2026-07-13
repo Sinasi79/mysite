@@ -1,0 +1,13 @@
+{% load static %}  
+
+<div class="popular-sidebar">
+    <h3>Popular Posts</h3>
+    {% for post in posts %}
+    <div class="popular-item">
+        <img src="{{ post.image.url }}">
+        <strong><a href="/projects/post-{{post.id}}">{{ post.title }}</a></strong>
+        <small>👁 {{ post.counted_views }} Views</small>	
+    </div>
+    {% endfor %}
+
+</div>

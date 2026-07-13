@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load blog_tags %}
 
 {% block content %}
 	<article id="portfolio" class="wrapper style3">
@@ -9,18 +10,27 @@
 				
 			</header>
 			<div class="row">
-				{% for post in posts %}
-				<div class="col-6">
-					<article class="box style2" style="height: 650px;">
-						<p class="image featured"><img src={{post.image.url}} alt="" style="height: 400px;"/></p>
-						<h3><a href="/projects/post-{{post.id}}">{{post.title}}</a></h3>
-						<p>{{post.content|truncatewords:15}}</p>
-						<small>>{{post.published_date|date:"d M Y"}}</small>
-						<small>/ published by : {{post.author}}</small>
-						<small>/ views : {{post.counted_views}}</small>
-					</article>
+				<div class="col-9">
+					<div class="row">
+						{% for post in posts %}
+						<div class="col-6">
+							<article class="box style2" style="height: 600px;">
+								<p class="image featured"><img src={{post.image.url}} alt="" style="height: 300px;"/></p>
+								<h3><a href="/projects/post-{{post.id}}">{{post.title}}</a></h3>
+								<p>{{post.content|truncatewords:50}}</p>
+								<small>>{{post.published_date|date:"d M Y"}}</small>
+								<small>/ published by : {{post.author}}</small>
+								<small>/ views : {{post.counted_views}}</small>
+							</article>
+						</div>
+						{% endfor %}
+					</div>
 				</div>
-				{% endfor %}
+
+				<div class="col-3">
+					{% popularposts %}
+
+				</div>
 			</div>
 		</div>
 	</article>
