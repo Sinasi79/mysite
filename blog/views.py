@@ -5,14 +5,14 @@ from django.utils import timezone
 
 
 # Create your views here.
-def projects_view(request) :
+def project_list_view(request) :
     now = timezone.now()
     posts = Post.objects.all().filter(status=1,published_date__lte=now)
     context_project = {'posts':posts}
     return render(request,'projects.html',context_project)
 
-def project_view(request,pid) :
-    post = Post.objects.get(id=pid,status=1)
+def project_detail_view(request,pid) :
+    post = Post.objects.get(id=pid,status=1,published_date__lte=timezone.now())
     post.counted_views += 1
     post.save()
     posts = list(Post.objects.filter(status=1, published_date__lte=timezone.now()))
