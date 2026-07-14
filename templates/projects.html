@@ -14,8 +14,15 @@
 					<div class="row">
 						{% for post in posts %}
 						<div class="col-6">
-							<article class="box style2" style="height: 600px;">
-								<p class="image featured"><img src={{post.image.url}} alt="" style="height: 300px;"/></p>
+							<article class="box style2 project-card" style="height: 600px;">
+								<div class="image featured">
+									<div class="sticky-container">
+										{% for cat in post.category.all %} 
+										    <span class="sticky-note">{{cat.title}}</span>
+										{% endfor %}
+									</div>
+									<img src={{post.image.url}} alt="" style="height: 300px;" class="card-image-wrapper"/>
+								</div>
 								<h3><a href="/projects/post-{{post.id}}">{{post.title}}</a></h3>
 								<p>{{post.content|truncatewords:50}}</p>
 								<small>>{{post.published_date|date:"d M Y"}}</small>
