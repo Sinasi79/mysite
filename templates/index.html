@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load blog_tags %}
 {% block content %}
 <!-- Home -->
 <article id="top" class="wrapper style1">
@@ -54,6 +54,20 @@
 		</footer>
 	</div>
 </article>
+
+<!-- Latest Projects -->
+<article class="wrapper style1">
+	<div class="container">
+		<header>
+			<h2>Here is my latest projects</h2>
+			
+		</header>
+		<div>		
+			{% latestposts %}
+		</div>
+	</div>
+</article>
+
 
 <!-- Portfolio -->
 <article id="portfolio" class="wrapper style3">

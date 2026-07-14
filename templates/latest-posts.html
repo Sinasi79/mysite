@@ -1,0 +1,36 @@
+    <div class="row">
+		{% for post in posts %}
+		<div class="col-4">
+			<article class="latest-card">
+				<a href="/projects/post-{{ post.id }}">
+					<img src="{{ post.image.url }}" alt="">
+				</a>
+				<div class="latest-content">
+					<div class="latest-category">
+						{% for cat in post.category.all %}
+							<span>{{ cat.title }}</span>
+						{% endfor %}
+					</div>
+	
+					<h3>
+						<a href="/projects/post-{{ post.id }}">
+							{{ post.title }}
+						</a>
+					</h3>
+					<p>
+						{{ post.content|truncatewords:40 }}
+					</p>
+					<div class="latest-footer">
+						<span>
+							<i class="fa fa-calendar"></i>
+							{{ post.published_date|date:"d M Y" }}
+						</span>
+						<a href="/projects/post-{{ post.id }}">
+							Read More →
+						</a>
+					</div>
+				</div>
+			</article>
+		</div>
+		{% endfor %}
+	</div>
