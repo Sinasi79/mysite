@@ -5,9 +5,11 @@ from django.utils import timezone
 
 
 # Create your views here.
-def project_list_view(request) :
+def project_list_view(request,cat_title=None) :
     now = timezone.now()
     posts = Post.objects.all().filter(status=1,published_date__lte=now)
+    if cat_title :
+            posts = posts.filter(category__title=cat_title)
     context_project = {'posts':posts}
     return render(request,'projects.html',context_project)
 
@@ -25,3 +27,12 @@ def project_detail_view(request,pid) :
         next_post = posts[current_index + 1]
     context_project2 = {'post':post,'previous_post': previous_post,'next_post': next_post}
     return render(request,'project.html',context_project2)
+
+def project_search(request) :
+     posts = Post.objects.filter(status=1)
+     if request.method == 'GET' :
+          posts = posts.filter(more_info__contains=request.GET.get('s'))
+     context = {'posts':posts}
+     return render(request,'projects.html',context)
+
+    

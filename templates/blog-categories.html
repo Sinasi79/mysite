@@ -1,0 +1,10 @@
+<div class="popular-sidebar">
+    <h3>Categories</h3>
+    {% for title,count in categories.items %}
+    <div class="popular-item">
+        <strong><a href="{% url 'category' cat_title=title %}">{{ title }}</a></strong>
+        <small> {{ count }}</small>	
+    </div>
+    {% endfor %}
+
+</div>

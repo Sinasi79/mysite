@@ -18,7 +18,7 @@
 								<div class="image featured">
 									<div class="sticky-container">
 										{% for cat in post.category.all %} 
-										    <span class="sticky-note">{{cat.title}}</span>
+										    <a class="sticky-note" href="{% url 'category' cat_title=cat.title %}">{{cat.title}}</a>
 										{% endfor %}
 									</div>
 									<img src={{post.image.url}} alt="" style="height: 300px;" class="card-image-wrapper"/>
@@ -35,7 +35,22 @@
 				</div>
 
 				<div class="col-3">
+					<div class="search-box">
+						<form action="{% url 'search' %}" method="get" class="search-form">
+						  <input 
+							type="text" 
+							name="s" 
+							class="search-input" 
+							placeholder="Search Posts..." 
+							required
+						  >
+						  <button type="submit" class="search-btn">🔍</button>
+						</form>
+					</div>
+					<p></p>
 					{% popularposts %}
+					<p></p>
+					{% postcategories %}
 
 				</div>
 			</div>

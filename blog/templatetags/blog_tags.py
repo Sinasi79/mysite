@@ -1,5 +1,5 @@
 from django import template
-from blog.models import Post
+from blog.models import Post,Category
 
 register = template.Library()
 
@@ -7,4 +7,16 @@ register = template.Library()
 def popularposts() :
     posts = Post.objects.filter(status=1).order_by('-counted_views')
     return {'posts':posts}
+
+@register.inclusion_tag('blog-categories.html')
+def postcategories() :
+    posts = Post.objects.filter(status=1)
+    categories = Category.objects.all()
+    cat_dict = {}
+    for title in categories :
+        cat_dict[title]=posts.filter(category=title).count()
+    return {'categories':cat_dict}
+
+
+
 
