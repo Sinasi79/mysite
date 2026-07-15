@@ -8,7 +8,7 @@
 				<div class="latest-content">
 					<div class="latest-category">
 						{% for cat in post.category.all %}
-							<span>{{ cat.title }}</span>
+							<span><a href="{% url 'category' cat_title=cat.title %}" style="color: darkblue;">{{ cat.title }}</a></span>
 						{% endfor %}
 					</div>
 	
