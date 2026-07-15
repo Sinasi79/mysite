@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils import timezone
+from website.models import Contact
+from website.forms import ContactForm
 
 def index_view(request) :
     context = {'name':'Sina','lastname':'Sabetimani'}
@@ -16,6 +18,10 @@ def languages_view(request) :
     return render(request,'languages.html')
 
 def contact_view(request) :
+    if request.method == 'POST' :
+        form = ContactForm(request.POST)
+        if form.is_valid() :
+            form.save()
     return render(request,'contact.html')
 
 
