@@ -15,8 +15,6 @@ def education_view(request) :
 def skills_view(request) :
     return render(request,'skills.html')
 
-def languages_view(request) :
-    return render(request,'languages.html')
 
 def contact_view(request) :
     if request.method == 'POST' :
