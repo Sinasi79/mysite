@@ -5,11 +5,14 @@ from django.utils import timezone
 
 
 # Create your views here.
-def project_list_view(request,cat_title=None) :
+def project_list_view(request,cat_title=None,tag_name=None) :
     now = timezone.now()
     posts = Post.objects.all().filter(status=1,published_date__lte=now)
     if cat_title :
-            posts = posts.filter(category__title=cat_title)
+        posts = posts.filter(category__title=cat_title)
+    if tag_name :
+        posts = posts.filter(tags__name=tag_name)
+        
     context_project = {'posts':posts}
     return render(request,'projects.html',context_project)
 

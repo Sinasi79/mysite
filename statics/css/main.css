@@ -2785,3 +2785,79 @@ input, select, textarea {
     transform:translateX(6px);
 
 }
+
+/* ==========================
+   Tag Cloud Widget
+========================== */
+
+.tags-widget{
+    background:#fff;
+    padding:28px;
+    border-radius:1px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+    margin-top:35px;
+}
+
+.widget-title{
+
+    background:#13cafdb2;
+    color:#000000a7;
+
+    text-align:center;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    font-size:28px;
+
+    margin-bottom:30px;
+
+	text-decoration: none;
+
+	text-shadow: none;
+}
+
+.tag-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.tag-item{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    color:#2c2b2b;
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.tag-item:hover{
+
+    background:#082945;
+
+    border-color:#000000;
+
+	text-shadow: none;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 18px rgba(19, 113, 253, 0.35);
+}
